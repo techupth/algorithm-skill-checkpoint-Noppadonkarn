@@ -8,4 +8,13 @@
 // palindrome("abba") === true
 // palindrome("abcdefg") === false
 
-export const palindrome = (str) => {};
+//ex1
+export const palindrome = (str) => {
+  return str.toLowerCase().split('').reverse().join('') === str.toLowerCase();
+};
+
+console.log(palindrome("abba"));
+console.log(palindrome("abcdefg"));
+
+
+

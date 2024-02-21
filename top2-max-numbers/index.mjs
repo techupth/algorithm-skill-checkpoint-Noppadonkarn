@@ -8,4 +8,19 @@
 // getTop2MaxNumbers([-10, -40, -20, -2, -9, -19]) === [-2, -9]
 // getTop2MaxNumbers([10, 40, 20, 2, 40, 9, 19]) === [40, 20]
 
-export const getTop2MaxNumbers = (numbers) => {};
+export const getTop2MaxNumbers = (numbers) => {
+  const sortNumber = numbers.sort((a, b) => b - a);
+  const newSortArrayNumber = [];
+  for(let i=0; i<sortNumber.length; i++){
+    if (!newSortArrayNumber.includes(sortNumber[i])) {
+      newSortArrayNumber.push(sortNumber[i]);
+    }
+  }
+  const top2MaxNumber = newSortArrayNumber.splice(0,2)
+
+  return top2MaxNumber;
+};
+
+console.log(getTop2MaxNumbers([10, 40, 20, 2, 9, 19]));
+console.log(getTop2MaxNumbers([-10, -40, -20, -2, -9, -19]));
+console.log(getTop2MaxNumbers([10, 40, 20, 2, 40, 9, 19]));
